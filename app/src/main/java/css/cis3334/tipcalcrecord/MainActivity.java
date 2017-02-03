@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    // Declare needed varaiable for widgets
     EditText etBill;
     EditText etNumPeople;
     TextView tvTotalTip;
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onClickButtonCalc(View view) {
+        //This is a comment
         Double bill = Double.parseDouble( etBill.getText().toString() );
         Double numPeople = Double.parseDouble( etNumPeople.getText().toString() );
         Double totalTip;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             totalTip = bill * 0.1;
         }
-        
+
         Double tipPerPerson = totalTip / numPeople;
 
         tvTotalTip.setText( "Total Tip: " + totalTip.toString());
