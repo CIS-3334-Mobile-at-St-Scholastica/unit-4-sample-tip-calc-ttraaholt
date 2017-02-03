@@ -27,34 +27,6 @@
         android:id="@+id/editTextBill" />
 
     <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextBill"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="14dp"
-        android:id="@+id/textView2" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="21dp"
-        android:id="@+id/editTextNumPeople" />
-
-    <CheckBox
-        android:text="Outstanding Service"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextNumPeople"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="17dp"
-        android:id="@+id/checkBoxService" />
-
-    <TextView
         android:text="Tip per person:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,5 +49,46 @@
         android:layout_height="wrap_content"
         android:id="@+id/textViewTotalTip"
         android:layout_below="@+id/buttonCalc"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/editTextBill"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:text="Outstanding Service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxService"
+        android:layout_above="@+id/buttonCalc"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:text="1 - One"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextBill"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:id="@+id/radioButton1" />
+
+    <RadioButton
+        android:text="3 - Three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioButton2"
+        android:layout_alignParentStart="true"
+        android:id="@+id/radioButton3" />
+
+    <RadioButton
+        android:text="2 - Two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButton2"
+        android:layout_below="@+id/radioButton1"
         android:layout_alignParentStart="true" />
 </RelativeLayout>
