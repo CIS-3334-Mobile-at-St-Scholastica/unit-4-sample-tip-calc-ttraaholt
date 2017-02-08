@@ -10,85 +10,85 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="css.cis3334.tipcalcrecord.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bill Amount"
-        android:id="@+id/textView" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="13dp"
-        android:id="@+id/editTextBill" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
-    <TextView
-        android:text="Tip per person:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewTotalTip"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textViewTipPerPerson" />
 
-    <Button
-        android:text="Calculate Tip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonCalc"
-        android:layout_centerVertical="true"
-        android:layout_alignEnd="@+id/checkBoxService"
-        android:onClick="onClickButtonCalc" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bill_amount"
+            android:id="@+id/textView" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:layout_marginTop="13dp"
+            android:id="@+id/editTextBill"
+            tools:ignore="LabelFor" />
+        <TextView
+            android:text="@string/number_of_people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            />
 
-    <TextView
-        android:text="Total Tip:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewTotalTip"
-        android:layout_below="@+id/buttonCalc"
-        android:layout_alignParentStart="true" />
+        <RadioButton
+            android:text="@string/one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:id="@+id/radioButton1" />
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:layout_alignBottom="@+id/editTextBill"
-        android:layout_alignParentStart="true" />
+        <RadioButton
+            android:text="@string/three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton3" />
 
-    <CheckBox
-        android:text="Outstanding Service"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBoxService"
-        android:layout_above="@+id/buttonCalc"
-        android:layout_alignParentStart="true" />
+        <RadioButton
+            android:text="@string/two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton2" />
 
-    <RadioButton
-        android:text="1 - One"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextBill"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp"
-        android:id="@+id/radioButton1" />
+        <CheckBox
+            android:text="@string/outstanding_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBoxService"  />
 
-    <RadioButton
-        android:text="3 - Three"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/radioButton2"
-        android:layout_alignParentStart="true"
-        android:id="@+id/radioButton3" />
+        <Button
+            android:text="Calculate Tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonCalc"
+            android:onClick="onClickButtonCalc" />
 
-    <RadioButton
-        android:text="2 - Two"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioButton2"
-        android:layout_below="@+id/radioButton1"
-        android:layout_alignParentStart="true" />
+        <TextView
+            android:text="@string/total_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewTotalTip"  />
+
+        <TextView
+            android:text="Tip per person:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewTipPerPerson" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerNumPeople"
+            android:entries="@array/num_array" />
+
+
+    </LinearLayout>
 </RelativeLayout>

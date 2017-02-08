@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">TipCalcRecord</string>
+    <string name="one">1 - One</string>
+    <string name="two">2 - Two</string>
+    <string name="three">3 - Three</string>
+    <string name="bill_amount">Bill Amount</string>
+    <string name="outstanding_service">Outstanding Service</string>
+    <string name="number_of_people">Number of People</string>
+    <string name="total_tip">Total Tip:</string>
+
+    <string-array name="num_array">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+    </string-array>
 </resources>

@@ -8,13 +8,14 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements updateViewInterface {
     // Declare needed varaiable for widgets
     EditText etBill;
     TextView tvTotalTip;
     TextView tvTipPerPerson;
     CheckBox cbService;
     RadioButton rb1, rb2, rb3;
+    CalculatorInterface tipCalc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,31 +29,23 @@ public class MainActivity extends AppCompatActivity {
         rb1 = (RadioButton) findViewById(R.id.radioButton1);
         rb2 = (RadioButton) findViewById(R.id.radioButton2);
         rb3 = (RadioButton) findViewById(R.id.radioButton3);
+        tipCalc = new TipCalculator(this);                  // instatiate the tip calculator
     }
-
 
     public void onClickButtonCalc(View view) {
         //This is a comment
         Double bill = Double.parseDouble( etBill.getText().toString() );
         int numPeople = 1;
-        if (rb1.isChecked()) {
-            numPeople = 1;
-        }
         if (rb2.isChecked()) {
             numPeople = 2;
-        }
-        if (rb3.isChecked()) {
+        } else if (rb3.isChecked()) {
             numPeople = 3;
         }
-        Double totalTip;
-        if (cbService.isChecked()) {
-            totalTip = bill * 0.2;
-        } else {
-            totalTip = bill * 0.1;
-        }
+        tipCalc.calculate(bill, numPeople, cbService.isChecked());
+    }
 
-        Double tipPerPerson = totalTip / numPeople;
-
+    @Override
+    public void updateView(Double totalTip, Double tipPerPerson) {
         tvTotalTip.setText( "Total Tip: " + totalTip.toString());
         tvTipPerPerson.setText( "Tip per Person: " + tipPerPerson.toString());
     }
